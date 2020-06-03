@@ -13,6 +13,7 @@ from django.contrib import messages
 import datetime
 from django.core.exceptions import ValidationError
 
+from .tasks import send_notify_student, send_notify_admin, send_notify_teacher
 from .utilities import (send_activation_notification, get_timestamp_path, get_namestamp_path,
                         send_new_comment_notification)
 
@@ -309,6 +310,9 @@ def notify_student(sender, instance, created, **kwargs):
             msg.content_subtype = "html"  # Main content is now text/html
             msg.send()
 
+            # For Celery deployment
+            # send_notify_student.delay(subject, html_message, from_addr, recipient_list)
+
 
 signals.post_save.connect(notify_student, sender=Bb)
 
@@ -337,6 +341,10 @@ def notify_admin(sender, instance, created, **kwargs):
         msg = EmailMultiAlternatives(subject, html_message, from_addr, recipient_list)
         msg.content_subtype = "html"  # Main content is now text/html
         msg.send()
+
+        # For Celery deployment
+        # send_notify_admin.delay(subject, html_message, from_addr, recipient_list)
+
     if instance.is_activated and instance.is_active:
         signer = Signer()
         if ALLOWED_HOSTS:
@@ -358,6 +366,9 @@ def notify_admin(sender, instance, created, **kwargs):
         msg = EmailMultiAlternatives(subject, html_message, from_addr, recipient_list)
         msg.content_subtype = "html"  # Main content is now text/html
         msg.send()
+
+        # For Celery deployment
+        # send_notify_teacher.delay(subject, html_message, from_addr, recipient_list)
 
 
 signals.post_save.connect(notify_admin, sender=Teacher)
