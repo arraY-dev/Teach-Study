@@ -11,6 +11,8 @@ body {
     font-family: sans-serif;
     background-color: #243b7f;
     color: white;
+    min-width: 325px;
+    overflow: auto;
 }
 
 .header {
@@ -27,6 +29,7 @@ body {
     border-right: 1px solid white;
     width: 20%;
     max-width: 17.5rem;
+    min-width: 12.5rem;
 }
 
 .logo__img {
@@ -96,6 +99,7 @@ body {
     max-width: 17.5rem;
     padding-top: 2rem;
     border-right: 1px solid;
+    min-width: 12.5rem;
 }
 
 .sidebar_item {
@@ -283,12 +287,14 @@ body {
     flex-direction: column;
     align-items: center;
     padding-top: 2rem;
+    text-align: center;
 }
 
 .schedule-list__header-name {
     color: white;
     font-size: 30px;
     font-weight: bold;
+    padding: 0 1rem;
 }
 
 .schedule-list__container {
@@ -333,7 +339,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 2rem;
+    padding: 2rem 1rem 1rem;
     position: relative;
 }
 
@@ -342,6 +348,8 @@ body {
     color: white;
     font-size: 30px;
     font-weight: bold;
+    text-align: center;
+    word-break: break-word;
 }
 
 .about__info {
@@ -357,13 +365,15 @@ body {
     color: white;
     width: 43.75rem;
 }
-.registration__form-short{
+
+.registration__form-short {
     display: flex;
     flex-direction: column;
     padding-top: 2rem;
     color: white;
     width: 31.25rem;
 }
+
 .btn-i-am-teacher,
 .form-group .btn.btn-primary,
 .btn-forgot-password {
@@ -394,6 +404,7 @@ body {
 
 .registration__buttons {
     padding-top: 1rem;
+    margin: auto;
 }
 
 .return-btn {
@@ -423,7 +434,7 @@ body {
 }
 
 .registration__form-forgot-password {
-    align-self: flex-end;
+    margin: auto;
 }
 
 .registration__form-item {
@@ -432,7 +443,7 @@ body {
 }
 
 .registration__btn-container {
-    align-self: flex-end;
+    margin: auto;
 }
 
 .teacher-name {
@@ -461,6 +472,8 @@ body {
     justify-content: center;
     align-items: center;
     padding: 0 2rem;
+    flex-grow: 1;
+    flex-basis: 0;
 }
 
 .studying-files__item-img {
@@ -478,6 +491,7 @@ body {
 
 .studying-files__item-link-container {
     padding: 10px 0;
+    text-align: center;
 }
 
 .white-bg {
@@ -624,6 +638,10 @@ table.table-borderless > thead > tr > th, table.table-borderless > tbody > tr > 
     font-weight: bold;
 }
 
+.calendar.table.table-bordered {
+    min-width: 700px;
+}
+
 .schedule-list__item-name {
     text-align: center;
 }
@@ -684,6 +702,7 @@ table.table-borderless > thead > tr > th, table.table-borderless > tbody > tr > 
     flex-direction: column;
     flex-grow: 1;
     padding: 1rem;
+    min-width: 400px;
 }
 
 .comment__item-name {
@@ -740,6 +759,7 @@ table.table-borderless > thead > tr > th, table.table-borderless > tbody > tr > 
     display: flex;
     justify-content: space-around;
     padding-top: 3rem;
+    flex-wrap: wrap;
 }
 
 .comments__box-comments {
@@ -749,6 +769,7 @@ table.table-borderless > thead > tr > th, table.table-borderless > tbody > tr > 
 
 .comments__box-comments .media-list {
     width: 95%;
+    padding-left: 2px;
 }
 
 .form-group.row textarea {
@@ -787,6 +808,327 @@ table.table-borderless > thead > tr > th, table.table-borderless > tbody > tr > 
     width: 95%;
     justify-content: flex-end;
 }
-.add-ads__container .form-group.row textarea{
+
+.add-ads__container .form-group.row textarea {
     margin-left: 0;
+}
+
+.edit-materials .col-md-9 a {
+    color: #99ccff;
+}
+
+.hamburger__container {
+    display: none;
+    cursor: pointer;
+}
+
+.bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: white;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.change .bar2 {
+    opacity: 0;
+}
+
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+}
+
+.hamburger__item-list {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: 10%;
+    left: 20%;
+    border: 1px solid gray;
+    color: black;
+    z-index: 9999;
+}
+
+.hamburger__item-list .sidebar_item-link {
+    color: black;
+}
+
+.hamburger__item-list .navbar-nav {
+    padding: 0.5rem;
+}
+
+.registration-new-user .btn.btn-primary {
+    margin: auto;
+    margin-top: 1rem;
+}
+
+@media (max-width: 1030px) {
+    .logo__name {
+        font-size: 15px;
+    }
+
+    #carouselExampleIndicators .d-block.w-100 {
+        height: 300px;
+    }
+
+    .detail-add .ads-item__info {
+        padding: 0 2rem;
+    }
+
+    #carouselExampleIndicators {
+        width: 400px;
+    }
+
+    .registration__form {
+        width: 34rem;
+    }
+
+    .registration__form-short {
+        width: 25rem;
+    }
+}
+
+@media (max-width: 865px) {
+
+    .logo {
+        width: 40%;
+    }
+
+    .hamburger__container {
+        display: inline-block;
+    }
+
+    .hamburger__item-list {
+        display: inline-block;
+    }
+
+    .sidebar {
+        display: none;
+    }
+
+    .ads-item__img {
+        width: 200px;
+        height: 150px;
+    }
+
+    #carouselExampleIndicators .d-block.w-100 {
+        height: 250px;
+    }
+
+    .detail-add .ads-item__info {
+        padding: 0 1rem;
+    }
+
+    #carouselExampleIndicators {
+        width: 300px;
+    }
+
+    .ads-item__img-container {
+        min-width: 100px;
+        min-height: 100px;
+    }
+
+    .btn-edit-comment,
+    .btn-cancel.edit-teacher-info {
+        right: 10%;
+    }
+
+    .btn-cancel.edit-teacher-info {
+        bottom: 2.75rem;
+    }
+
+    .btn-edit-comment {
+        bottom: 3.6875rem;
+    }
+
+    .edit-password .btn-edit-comment {
+        bottom: 45px;
+    }
+}
+
+@media (max-width: 650px) {
+    .ads__item {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #carouselExampleIndicators {
+        width: 400px;
+    }
+
+    .item-details .ads-item__info {
+        padding: 0;
+    }
+
+    .item-details .ads-item__info .text-right {
+        text-align: center !important;
+    }
+
+    .ads-item__info {
+        display: flex;
+        align-items: center;
+    }
+
+    .ads-page {
+        padding-left: 1rem;
+    }
+
+    .detail-add.white-bg {
+        padding-left: 0;
+    }
+
+    .comments__box-comments .media-list {
+        margin: auto;
+    }
+}
+
+@media (max-width: 525px) {
+    .logo {
+        width: 75%;
+    }
+
+    .navigation {
+        padding-right: 0;
+    }
+
+    .ads__header-container {
+        flex-wrap: wrap;
+    }
+
+    .ads-page, .ads-item__info {
+        padding-left: 0.5rem;
+    }
+
+    .pagination {
+        padding-right: 1rem;
+    }
+
+    #carouselExampleIndicators {
+        width: 300px;
+    }
+
+    .form-control {
+        width: 95%;
+    }
+
+    .comments__box {
+        flex-wrap: wrap;
+    }
+
+    .form-group.row textarea {
+        margin-left: 0;
+    }
+
+    .comments__box .form-group {
+        width: 95%;
+    }
+
+    .comment__item-container {
+        min-width: 200px;
+    }
+
+    .dropdown-menu.show {
+        left: -5rem !important;
+    }
+
+    .registration__form {
+        width: 18.75rem;
+    }
+
+    .btn-cancel.edit-teacher-info {
+        bottom: 0;
+    }
+
+    .navigation {
+        flex-wrap: wrap;
+        justify-content: center;
+        font-size: 15px;
+        max-width: 40%;
+    }
+
+    .navigation__item {
+        padding: 0.5rem;
+    }
+
+    .navigation__item-link {
+        font-size: 16px;
+    }
+
+    .logo__link {
+        font-size: 13px;
+    }
+
+    .registration__form-short {
+        width: 16rem;
+    }
+
+    .registration-return__button,
+    .btn-cancel,
+    .btn-cancel.btn-edit-comment,
+    .btn-cancel.edit-teacher-info {
+        position: relative;
+        bottom: 0;
+        right: 0;
+    }
+
+    .form-group {
+        justify-content: center;
+    }
+
+    .btn-cancel_container {
+        display: flex;
+        justify-content: center;
+    }
+
+    .about__container, .registration {
+        padding: 2rem 0.5rem 1rem;
+    }
+
+    .registration-return__button {
+        display: flex;
+        justify-content: center;
+    }
+
+    .navigation .dropdown-toggle {
+        white-space: normal;
+    }
+
+    .navigation .nav-link {
+        padding: .5rem .25rem;
+        word-break: break-word;
+        font-size: 14px;
+    }
+
+    .add-ads__container .registration__form .col-md-3.col-form-label,
+    .edit-materials .registration__form .col-md-3.col-form-label {
+        display: none;
+    }
+
+    .add-ads__container .registration__form .form-check,
+    .edit-materials .registration__form .form-check {
+        margin-top: -1.75rem;
+    }
+
+    .add-ads__container .registration__form .col-md-9,
+    .edit-materials .registration__form .col-md-9 {
+        padding-top: 1.5rem;
+    }
+
+    .about__info {
+        padding-top: 0.5rem;
+    }
+
+    .registration__form {
+        padding-top: 1rem;
+    }
+
+    .about__name {
+        font-size: 27px;
+    }
 }
