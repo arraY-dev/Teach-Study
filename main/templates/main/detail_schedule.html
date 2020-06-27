@@ -12,17 +12,17 @@
 <section class="schedule">
     {% if ais %}
     <div class="schedule__header">
-        <p class="schedule__name">Расписание группы {{ sh.group.name }}</p>
+        <p class="schedule__name">Розклад групи {{ sh.group.name }}</p>
     </div>
     <table class="calendar table table-bordered">
         <thead>
         <tr>
             <th>&nbsp;</th>
-            <th width="20%">Понедельник</th>
-            <th width="20%">Вторник</th>
-            <th width="20%">Среда</th>
-            <th width="20%">Четверг</th>
-            <th width="20%">Пятница</th>
+            <th width="20%">Понеділок</th>
+            <th width="20%">Вівторок</th>
+            <th width="20%">Середа</th>
+            <th width="20%">Четвер</th>
+            <th width="20%">П'ятниця</th>
         </tr>
         </thead>
         <tbody>
@@ -122,7 +122,6 @@
 
 
             {% if sbs_thursday %}
-            <td class=" no-events" rowspan="1"></td>
             {% if first_lessonTH|length == 2 %}
             <td class=" has-events">
                 {% for sb in first_lessonTH %}
